@@ -1,0 +1,203 @@
+/* Genel Stil Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
+/* Giris kısmı yapılandırma  */
+.giris { /* yazı ve saatimizi ortaladık, kenar boşluklarını ve hizalamasını ayarladık  */
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+
+h1 {   /* h1 başlığımızı düzenledik  */
+    font-size: 4em;
+    margin-bottom: 50px;
+}
+
+
+#LiveClock { /* Saatimizi özelleştirdik*/   /* Boyutunu ayarladık, Arkaplan ekledik, kenar boşluklarını kıstık ve köşelerini yumuşattık*/
+    font-size: 2.5em;    
+    background: linear-gradient(to top, rgba(87, 9, 102, 0.8), rgba(3, 55, 223, 0.8));
+    padding: 15px 15px;
+    border-radius: 15px;
+}
+
+/* İletişim Bilgisi Bölümü */
+
+.Information-container {     /* maddeler arası hizamala yaptık, yatayda ortaladık*/
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+form {
+    flex-direction: row;  /* yatay olarak sıraladık */
+    max-width: 400px; 
+    width: 100%;        /* ölçeklendirdik */
+    padding: 20px;  /* kenar boşluklarını ve köşeleri düzenleyip yumuşattık */
+    background-color: #0c3ad1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   /* gölgelendirme yaptık */
+    border-radius: 8px;
+}
+
+input, textarea, button {
+    width: 100%;  
+    font-size: 1.2em;
+    border-radius: 4px;   
+    background-color: #f9f9f9;   /* arka plan rengi*/
+    margin-bottom: 8px;
+    padding: 10px;      /* form elemanlarının iç kısmına boşluk ekler*/
+}
+
+textarea:focus ,input:focus{  /*çok güzel bir eklentidir, mesaj yazarken yada orayı hedef aldığımızda, bir parlama vererek netlik sağlar*/
+    border-color: #db09f7;
+    outline: none;
+}
+
+button {
+    background-color: #5c8df6; /*butonun arka plan rengini degiştirir*/
+    color: white;              /*metin rengini ayarlarız*/
+    padding: 18px;                
+    border-radius: 8px;
+    font-size: 1.2em;
+    border: none; 
+    cursor: pointer; /*fareyi getirince butonu el işaretine dönüştürür*/
+}
+
+button:hover { /* fareyi getirince arka plan rengi değişir ve hafif büyüme ekleriz */
+    background-color: #4a7bc2;
+    transform: scale(1.05);
+}
+
+
+/* Error Mesajı */
+#ErrorMessage {   /* hata mesajını özelleştirdik, başta gizli hata alınca ortaya cıkmasını sağladık */
+    color: #b1f80b;
+    display: none;
+    font-size: 1.2em;
+}
+
+/* Vücut ve Arka Plan */
+body {   
+    display: flex;
+    flex-wrap: wrap;   /* wrap sayesinde, telefon kullanımı vb durumlarda kutu taşırarak tek satırda gösterir*/
+    align-items: center; /*Sitenin ortasına hizalama yaptık*/
+    flex-direction: column;   /*Dikey bir hizalama da gerekli*/
+    justify-content: flex-start; 
+    background-image: url('images/foto2.jpg'); /* hali hazırda arka plan fotosu kullandığım için background color kullanmadım*/
+    background-size: cover; /*fotoğrafımızın arka planın boyutune göre yayılmasını*/
+    /*arka planı merkezde toplamaya gerek yok backround-center kullanıp fotoğrafımız zaten kaplıyor*/                      
+}
+
+/* Navbar Kısmı Modelleme */
+.navbarım {
+    background: linear-gradient(to right, rgba(252, 29, 203, 0.8), rgba(8, 36, 128, 0.8)); /*Navbarımıza arka plan ekledik görsellik kattık*/
+    padding: 20px 10px; /*Kenar boşluklarını düzenledim*/
+    position: fixed; /*posizyonu fixed yani sabitlemiş olarak ayarladık, navbarın ortada en üstte durması için*/
+    border-radius: 15px; /* Köşeleri yumuşattım*/
+}
+
+.nav-links li { /*Yatayda boşluk ekledim, sayfa isimleri arasında*/
+    margin: 0 12px;
+}
+
+.nav-links {
+    list-style-type: none; /* Daha temiz görüntü için listelemeyi none yaptım*/
+    display: flex; /*yatayda hizaladım*/
+}
+
+.nav-links a {   /*isimlendirmelerimizi <a> içine yapmıştık, şimdi onları modifiye ediyoruz*/
+    color: white;  
+    font-size: 1.3em; /*yazı büyüklüğü 1.3 em*/
+}
+
+.nav-links a:hover {  /*Fareyle üstüne gelince renklendirmeyi sağladım*/
+    color: #97b1f7;
+}
+
+/*Hakkımda Bölümü özelleştirme*/
+
+.Baslık {
+    color: rgb(181, 20, 230);
+}
+
+#pepe {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+/* Fotoğrafların görünümünü düzenledik daha önce yaptığımız şeylere benzer */
+.photo {
+    width: 250px;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Başlangıçta fotoğrafları gizleme */
+}
+
+.tüm {
+    width: 410px;
+    height: 310px;
+}
+
+.eniyi {
+    width: 420px;
+    height: 320px;
+}
+
+
+
+/* Sıralama yapmak için butonlar */
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5c8df6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #4a7bc2;
+}
+
+
+/* Responsive Özelleştirmesi */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 11px 0;
+    }
+
+    .Information-container {
+        padding: 11px;
+    }
+
+    form {
+        padding: 12px;
+        max-width: 80%;
+    }
+}

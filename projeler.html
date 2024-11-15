@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portföy Ödevi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar Kısmı -->
+    <nav class="navbarım">
+        <ul class="nav-links">
+            <li><a href="anasayfa.html">ANA SAYFA</a></li>
+            <li><a href="hakkımda.html">HAKKIMDA</a></li>
+            <li><a href="projeler.html">PROJELER</a></li>
+        </ul>
+    </nav>
+
+    <div class="giris">
+        <h1>Projelerim</h1>
+
+        <!-- Sıralama Yapmak için Butonlarımız -->
+        <div class="buttons">
+            <button onclick="showPhotos('eniyi')">En İyi Projeler</button>
+            <button onclick="showPhotos('tüm')">Tüm Projeler</button>
+        </div>
+
+    
+        <div class="photo tüm" style="background-image: url('images/feedbox1.png');"></div> <br><br>
+         <p><span class="Baslık">FEED BOX PROJESİ</span></p> <br>
+        <p>Bu proje ile başta sokak hayvanlarının yeterli, <br>doğru ve sağlıklı gıdaya 
+                ulaşmasını sağlamakla <br>birlikte toplumumuzdaki hayvan sevgisi ve <br>duyarlılığını 
+                arttırmayı amaçlayan bir projedir.<br> Kısaca, görüntü işleme sistemi ile gelen hayvanı <br>tanır ve analiz edip doğru yemi verir.</p> <br>
+            
+
+        <div class="photo eniyi" style="background-image: url('images/feedbox1.png');"></div> <br><br>
+        <p><span class="Baslık">GEZİ ROTASI PROJESİ</span></p> <br>
+        <p>Bu projemizde ülkemizden yola çıkarak bir <br>şehre gitmek istediğimizi hayal edelim. Fakat <br>çoğumuzun gideceğimiz yer hakkında o şehrin yerlisi <br>kadar bilgimiz olmadığı için,
+                giden kişilere rehber <br>niteliğinde bu siteyi geliştirdik. 
+        </p>
+        <br><br><br>
+            <div class="photo eniyi" style="background-image: url('images/gezi.png');"></div>
+        </div>
+    </div>
+
+    <script>
+        function showPhotos(type) {
+            const tümPhotos = document.querySelectorAll('.tüm');
+            const eniyiPhotos = document.querySelectorAll('.eniyi');
+            
+            // Tüm fotoğrafları göster
+            if (type === 'tüm') {
+                tümPhotos.forEach(photo => photo.style.display = 'block');
+                eniyiPhotos.forEach(photo => photo.style.display = 'none');
+            } else if (type === 'eniyi') {
+                tümPhotos.forEach(photo => photo.style.display = 'none');
+                eniyiPhotos.forEach(photo => photo.style.display = 'block');
+            }
+        }
+
+        // Sayfa ilk yüklendiğinde tüm projeler kısmını göstermeye yarar
+        window.onload = function() {
+            showPhotos('eniyi');
+        }
+    </script>
+</body>
+</html>

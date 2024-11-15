@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portföy Ödevi</title>
+    <link href="styles.css", rel="stylesheet" >
+    <link href="js.js", rel="stylesheet" >
+</head>
+<body>
+
+    <!-- Navbar Kısmı -->
+    <nav class="navbarım">
+            <ul class="nav-links">
+                <li><a href="anasayfa.html">ANA SAYFA</a></li>
+                <li><a href="hakkımda.html">HAKKIMDA</a></li>
+                <li><a href="projeler.html">PROJELER</a></li>
+            </ul>
+    </nav>
+
+    <div class="giris">
+        <h1> Hoş geldiniz! </h1>
+        <p id="LiveClock"></p> <!-- saatimize id atadık -->
+    </div>
+
+    <!-- Canlı Saat Bölümü -->
+    
+<script>
+    function updateDateTime() {             // Sayfamız açıldığında ilk saat bilgisini getirir
+        const now = new Date();             // güncel saati almak için
+        const options = { weekday: 'long',  // Günleri tam adıyla yazdırdık
+                          year: 'numeric',  // Yılı tam gösterdik
+                          month: 'short',   // Ayı kısa gösterdik
+                          day: 'numeric',
+                          hour: '2-digit',  // 2 digit olarak belirlediğimiz yerleri 2 haneli olarak gösterir
+                          minute: '2-digit', 
+                            second: '2-digit'};
+    document.getElementById("LiveClock").textContent = now.toLocaleString('tr-TR', options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+
+    <br><br><br><br>
+
+    <!-- İletişim Bilgisi Bölümü -->
+    <form id="InfotmationForm" onsubmit="validateForm(event)">
+        <input type="text" id="name" placeholder="İsim">
+         <input id="message" placeholder="Mesaj">
+         <input type="email" id="email" placeholder="E-posta">
+         <p id="ErrorMessage" style="color: navy; display: none;"></p> <!-- Hatalı mesaj bölümü -->
+        <button type="submit">GÖNDER</button>
+        
+    </form>
+
+</body>
+</html>

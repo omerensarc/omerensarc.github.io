@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portföy Ödevi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="js.js">
+</head>
+<body >
+    <!-- Navbar Kısmı -->
+    <nav class="navbarım">
+        <ul class="nav-links">
+            <li><a href="anasayfa.html">ANA SAYFA</a></li>
+            <li><a href="hakkımda.html">HAKKIMDA</a></li>
+            <li><a href="projeler.html">PROJELER</a></li>
+        </ul>
+</nav>
+
+    <!-- Hakkımda İçerik -->
+    <div class="giris">
+        <p id="pepe"><span class="Baslık">İSİM:</span> Ömer Ensar CENGİZ</p> <br>
+        <p id="pepe"><span class="Baslık">MESLEK:</span>  Bilgisayar Mühendisi</p><br>
+        <p id="pepe" style="text-align: center;"><span class="Baslık">BİYOGRAFİ:</span>Kendimi bildim bileli hep bilgisayar ile iç içeydim.<br>Bu yüzden 2020 yılında bu mesleği tercih ederek RTEÜ'ye geldim.
+                Yabancı dilleri çok severim. <br>Halihazırda 8 yıldır ingilizce ile ve güncel olarak İspanyolca ile uğraşıyorum.
+                Bir yazılım <br>alanınca basit ve orta seviye projelerim oldu. Şuanda mobil geliştirme üzerinde ilerliyorum. </p><br><br><br><br><br>
+        <p id="bio"></p>
+        <button onclick="toggleDetails()" id="GecisButonu">Daha Fazla Bilgi</button>
+        <p id="detaylar" style="display: none;"> <!-- display none yaptık, sayfa ilk açıldığında "daha fazla gör kısmı gözükmesin diye"-->
+            Başlarda biraz yavaş ilerlesemde kendimi geliştirmeye devam ediyorum. İnşallah çok güzel işlere vesile olacağız.
+        </p>
+    </div>
+
+    <script>
+        function toggleDetails() {
+            const details = document.getElementById("detaylar");
+            const button = document.getElementById("GecisButonu");
+    
+            
+            if (details.style.display === "none") { // Eğer detaylar gizli ise (none)
+                details.style.display = "block";
+                button.textContent = "Daha Az Göster"; 
+            } else {
+                details.style.display = "none"; 
+                button.textContent = "Daha Fazla Bilgi"; 
+            }
+        }
+    </script>
+    
+</body>
+</html>

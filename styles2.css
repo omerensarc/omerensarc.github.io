@@ -1,0 +1,108 @@
+/* Genel Stil Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    padding-top: 70px; /* Navbar'ın altında içerik başlaması için boşluk */
+}
+
+/* Navbar Stil Ayarları */
+.navbar {
+    width: 100%;
+    background-color: #0337DF;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b3c7ff;
+}
+
+/* İçerik Stili */
+.content {
+    text-align: center;
+    margin-top: 50px; /* Navbar'dan sonra içerik başlasın */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #0337DF;
+    margin-bottom: 20px;
+}
+
+#bio {
+    font-size: 1.2em;
+    color: #333;
+    background: #e6e6e6;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+#details {
+    font-size: 1.1em;
+    color: #333;
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border-top: 2px solid #333;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #0337DF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f5ed9;
+}
